@@ -111,8 +111,6 @@
         android:usesCleartextTraffic="true"
         android:enableOnBackInvokedCallback="true"
     >
-        <!-- usesCleartextTraffic for browser supporting opening http:// links -->
-
         <activity-alias
             android:enabled="true"
             android:name="org.telegram.messenger.DefaultIcon"
@@ -355,16 +353,7 @@
                 <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE"/>
             </intent-filter>
         </activity>
-<!--        <activity-->
-<!--            android:name="org.telegram.ui.FeedWidgetConfigActivity"-->
-<!--            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"-->
-<!--            android:hardwareAccelerated="true"-->
-<!--            android:windowSoftInputMode="adjustPan">-->
-<!--            <intent-filter android:icon="@mipmap/ic_launcher" android:roundIcon="@mipmap/ic_launcher_round">-->
-<!--                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE"/>-->
-<!--            </intent-filter>-->
-<!--        </activity>-->
-        <activity
+<activity
             android:name="org.telegram.messenger.OpenChatReceiver"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"
             android:exported="true">
@@ -646,18 +635,7 @@
             android:foregroundServiceType="dataSync"
         />
 
-<!--        <receiver android:name=".FeedWidgetProvider">-->
-<!--            <meta-data android:name="android.appwidget.provider"-->
-<!--                android:resource="@xml/feed_widget_info" />-->
-<!--            <intent-filter>-->
-<!--                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />-->
-<!--            </intent-filter>-->
-<!--        </receiver>-->
-
-<!--        <service android:name=".FeedWidgetService"-->
-<!--            android:permission="android.permission.BIND_REMOTEVIEWS"-->
-<!--            android:exported="false" />-->
-        <service
+<service
             android:name=".FilesMigrationService"
             android:exported="false"
             android:foregroundServiceType="dataSync"
@@ -672,25 +650,6 @@
 
         <meta-data android:name="com.google.android.gms.wallet.api.enabled" android:value="true" />
 
-        <!--
-        <meta-data android:name="com.google.android.gms.car.notification.SmallIcon" android:resource="@drawable/ic_player" />
-        <meta-data android:name="com.google.android.gms.car.application" android:resource="@xml/automotive_app_desc" />
-
-        <service
-            android:name="org.telegram.messenger.car.TelegramCarAppService"
-            android:exported="true"
-            android:foregroundServiceType="connectedDevice">
-            <intent-filter>
-                <action android:name="androidx.car.app.CarAppService" />
-                <category android:name="androidx.car.app.category.MESSAGING" />
-            </intent-filter>
-        </service>
-
-        <meta-data
-            android:name="androidx.car.app.minCarApiLevel"
-            android:value="5" />
-        -->
-
         <meta-data android:name="com.google.android.gms.vision.DEPENDENCIES" android:value="face,barcode" />
 
         <meta-data android:name="android.max_aspect" android:value="2.5" />
@@ -698,6 +657,196 @@
             android:name="com.google.android.gms.cast.framework.OPTIONS_PROVIDER_CLASS_NAME"
             android:value="org.telegram.messenger.chromecast.ChromecastOptionsProvider" />
 
+        <activity-alias
+            android:name="app.mdgram.android.DefaultIcon"
+            android:enabled="true"
+            android:exported="true"
+            android:targetActivity="org.telegram.ui.LaunchActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.MULTIWINDOW_LAUNCHER"/>
+            </intent-filter>
+            <meta-data
+                android:name="android.app.shortcuts"
+                android:resource="@xml/shortcuts"/>
+        </activity-alias>
+        <activity-alias
+            android:icon="@mipmap/ic_materialyou"
+            android:name="app.mdgram.android.MaterialYou"
+            android:enabled="false"
+            android:exported="true"
+            android:targetActivity="org.telegram.ui.LaunchActivity"
+            android:roundIcon="@mipmap/ic_materialyou">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.MULTIWINDOW_LAUNCHER"/>
+            </intent-filter>
+            <meta-data
+                android:name="android.app.shortcuts"
+                android:resource="@xml/shortcuts"/>
+        </activity-alias>
+        <activity-alias
+            android:icon="@mipmap/ic_orange"
+            android:name="app.mdgram.android.Orange"
+            android:enabled="false"
+            android:exported="true"
+            android:targetActivity="org.telegram.ui.LaunchActivity"
+            android:roundIcon="@mipmap/ic_orange_round">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.MULTIWINDOW_LAUNCHER"/>
+            </intent-filter>
+            <meta-data
+                android:name="android.app.shortcuts"
+                android:resource="@xml/shortcuts"/>
+        </activity-alias>
+        <activity-alias
+            android:icon="@mipmap/ic_green"
+            android:name="app.mdgram.android.Green"
+            android:enabled="false"
+            android:exported="true"
+            android:targetActivity="org.telegram.ui.LaunchActivity"
+            android:roundIcon="@mipmap/ic_green_round">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.MULTIWINDOW_LAUNCHER"/>
+            </intent-filter>
+            <meta-data
+                android:name="android.app.shortcuts"
+                android:resource="@xml/shortcuts"/>
+        </activity-alias>
+        <activity-alias
+            android:icon="@mipmap/ic_yellow"
+            android:name="app.mdgram.android.MatYouV2"
+            android:enabled="false"
+            android:exported="true"
+            android:targetActivity="org.telegram.ui.LaunchActivity"
+            android:roundIcon="@mipmap/ic_yellow_round">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.MULTIWINDOW_LAUNCHER"/>
+            </intent-filter>
+            <meta-data
+                android:name="android.app.shortcuts"
+                android:resource="@xml/shortcuts"/>
+        </activity-alias>
+        <activity-alias
+            android:icon="@mipmap/ic_color"
+            android:name="app.mdgram.android.Color"
+            android:enabled="false"
+            android:exported="true"
+            android:targetActivity="org.telegram.ui.LaunchActivity"
+            android:roundIcon="@mipmap/ic_color_round">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.MULTIWINDOW_LAUNCHER"/>
+            </intent-filter>
+            <meta-data
+                android:name="android.app.shortcuts"
+                android:resource="@xml/shortcuts"/>
+        </activity-alias>
+        <activity-alias
+            android:icon="@mipmap/icon_6_launcher"
+            android:name="app.mdgram.android.VintageIcon"
+            android:enabled="false"
+            android:exported="true"
+            android:targetActivity="org.telegram.ui.LaunchActivity"
+            android:roundIcon="@mipmap/icon_6_launcher_round">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.MULTIWINDOW_LAUNCHER"/>
+            </intent-filter>
+            <meta-data
+                android:name="android.app.shortcuts"
+                android:resource="@xml/shortcuts"/>
+        </activity-alias>
+        <activity-alias
+            android:icon="@mipmap/icon_4_launcher"
+            android:name="app.mdgram.android.AquaIcon"
+            android:enabled="false"
+            android:exported="true"
+            android:targetActivity="org.telegram.ui.LaunchActivity"
+            android:roundIcon="@mipmap/icon_4_launcher_round">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.MULTIWINDOW_LAUNCHER"/>
+            </intent-filter>
+            <meta-data
+                android:name="android.app.shortcuts"
+                android:resource="@xml/shortcuts"/>
+        </activity-alias>
+        <activity-alias
+            android:icon="@mipmap/icon_3_launcher"
+            android:name="app.mdgram.android.PremiumIcon"
+            android:enabled="false"
+            android:exported="true"
+            android:targetActivity="org.telegram.ui.LaunchActivity"
+            android:roundIcon="@mipmap/icon_3_launcher_round">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.MULTIWINDOW_LAUNCHER"/>
+            </intent-filter>
+            <meta-data
+                android:name="android.app.shortcuts"
+                android:resource="@xml/shortcuts"/>
+        </activity-alias>
+        <activity-alias
+            android:icon="@mipmap/icon_5_launcher"
+            android:name="app.mdgram.android.TurboIcon"
+            android:enabled="false"
+            android:exported="true"
+            android:targetActivity="org.telegram.ui.LaunchActivity"
+            android:roundIcon="@mipmap/icon_5_launcher_round">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.MULTIWINDOW_LAUNCHER"/>
+            </intent-filter>
+            <meta-data
+                android:name="android.app.shortcuts"
+                android:resource="@xml/shortcuts"/>
+        </activity-alias>
+        <activity-alias
+            android:icon="@mipmap/icon_2_launcher"
+            android:name="app.mdgram.android.NoxIcon"
+            android:enabled="false"
+            android:exported="true"
+            android:targetActivity="org.telegram.ui.LaunchActivity"
+            android:roundIcon="@mipmap/icon_2_launcher_round">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.MULTIWINDOW_LAUNCHER"/>
+            </intent-filter>
+            <meta-data
+                android:name="android.app.shortcuts"
+                android:resource="@xml/shortcuts"/>
+        </activity-alias>
+        <activity
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:name="app.mdgram.android.MDsettings.helper.AppRestartHelper"
+            android:exported="false"
+            android:process=":mdgram"/>
+        <activity android:name="app.mdgram.android.Activies.Ab"/>
+        <activity android:name="app.mdgram.android.fontStyle.BasePreferenceActivity"/>
+        <activity android:name="app.mdgram.android.fontStyle.UniversalStyle"/>
+        <activity android:name="app.mdgram.android.Activies.AbV"/>
+        <service
+            android:name="com.blankj.utilcode.util.MessengerUtils.ServerService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="app.mdgram.android.messenger"/>
+            </intent-filter>
+        </service>
     </application>
 
 </manifest>

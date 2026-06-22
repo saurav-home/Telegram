@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:height="40dp"
+        android:width="40dp">
+        <shape android:shape="oval">
+            <solid android:color="#3d358b"/>
+        </shape>
+    </item>
+    <item
+        android:gravity="center"
+        android:height="24dp"
+        android:width="24dp"
+        android:drawable="@drawable/notification"
+        android:left="0dp"/>
+</layer-list>

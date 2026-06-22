@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center"
+    android:layout_gravity="bottom"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <com.ruffian.library.widget.RFrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:minHeight="400dp"
+        app:corner_radius_top_left="30dp"
+        app:corner_radius_top_right="30dp">
+        <app.mdgram.android.MDsettings.ChatHelper.UserPersonalView
+            android:id="@+id/user_personal_view"
+            android:visibility="visible"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </com.ruffian.library.widget.RFrameLayout>
+    <LinearLayout
+        android:gravity="center"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="56dp">
+        <com.flyco.tablayout.SegmentTabLayout
+            android:id="@+id/tab_layout"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:layout_marginLeft="34dp"
+            android:layout_marginRight="34dp"
+            app:tl_bar_color="#eeeeee"
+            app:tl_bar_stroke_color="#eeeeee"
+            app:tl_bar_stroke_width="2dp"
+            app:tl_indicator_anim_enable="true"
+            app:tl_indicator_color="#ffffff"
+            app:tl_indicator_corner_radius="18dp"
+            app:tl_indicator_margin_bottom="2dp"
+            app:tl_indicator_margin_left="2dp"
+            app:tl_indicator_margin_right="2dp"
+            app:tl_indicator_margin_top="2dp"
+            app:tl_textSelectColor="#000000"
+            app:tl_textUnselectColor="#000000"
+            app:tl_textsize="13dp"/>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_gravity="bottom|center_horizontal"
+    android:id="@+id/mSearchHolder"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="8dp"
+    app:cardBackgroundColor="@color/transparent"
+    app:cardCornerRadius="28dp"
+    app:cardElevation="0dp">
+    <androidx.appcompat.widget.SearchView
+        android:layout_gravity="center"
+        android:id="@+id/mSearchView"
+        android:focusable="false"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layoutDirection="rtl"
+        app:iconifiedByDefault="true"
+        app:queryHint="@string/abc_search_hint"
+        style="@style/Base.Widget.AppCompat.SearchView"/>
+</androidx.cardview.widget.CardView>
